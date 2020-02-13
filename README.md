@@ -26,8 +26,7 @@ Those modules can be installed using: `pip install numpy scipy pillow matplotlib
 
 ## Setup
 
-1. Clone this repository: `git clone https://github.com/MarvinTeichmann/KittiSeg.git`
-2. Initialize all submodules: `git submodule update --init --recursive`
+1. Clone this repository: `git clone https://github.com/Aniruddh1/Kittiseg_`
 3. [Optional] Download Kitti Road Data:
     1. Retrieve kitti data url here: [http://www.cvlibs.net/download.php?file=data_road.zip](http://www.cvlibs.net/download.php?file=data_road.zip)
     2. Call `python download_data.py --kitti_url URL_YOU_RETRIEVED`
