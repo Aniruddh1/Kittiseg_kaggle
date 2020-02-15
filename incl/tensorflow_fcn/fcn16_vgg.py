@@ -21,7 +21,7 @@ class FCN16VGG:
             # print path
             path = os.path.abspath(os.path.join(path, os.pardir))
             # print path
-            path = os.path.join(path, "vgg16.npy")
+            path = ('data/weights/vgg16.npy')
             vgg16_npy_path = path
             logging.info("Load npy file from '%s'.", vgg16_npy_path)
         if not os.path.isfile(vgg16_npy_path):

@@ -23,6 +23,7 @@ import sys
 import collections
 
 os.chdir('Kittiseg_kaggle')
+# os.chdir('Kittiseg_kaggle')
 
 def dict_merge(dct, merge_dct):
     """ Recursive dict merge. Inspired by :meth:``dict.update()``, instead of

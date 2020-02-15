@@ -105,7 +105,9 @@ def _load_gt_file(hypes, data_file=None):
 
     The generator outputs the image and the gt_image.
     """
-    base_path = os.path.realpath(os.path.dirname(data_file))
+    base_path = 'data'
+    # base_path = os.path.realpath(os.path.dirname(data_file))
+    data_file = 'data/'+data_file    
     files = [line.rstrip() for line in open(data_file)]
 
     for epoche in itertools.count():
@@ -145,7 +147,8 @@ def _make_data_gen(hypes, phase, data_dir):
     else:
         assert False, "Unknown Phase %s" % phase
 
-    data_file = os.path.join(data_dir, data_file)
+    # data_file = os.path.join(data_dir, data_file)
+    data_file = ('/training/'+data_file)
 
     road_color = np.array(hypes['data']['road_color'])
     background_color = np.array(hypes['data']['background_color'])
@@ -352,7 +355,7 @@ def start_enqueuing_threads(hypes, q, phase, sess):
 
     enqueue_op = q.enqueue((image_pl, label_pl))
     gen = _make_data_gen(hypes, phase, data_dir)
-    gen.next()
+    gen.__next__()
     # sess.run(enqueue_op, feed_dict=make_feed(data))
     if phase == 'val':
         num_threads = 1
